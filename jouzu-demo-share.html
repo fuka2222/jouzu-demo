@@ -638,6 +638,228 @@ html[data-brand="snsclub"] .btn-text-link {
   width: 100%;
 }
 
+/* === チームタブ：担当生徒オーバービュー（MG/コーチ/リーダー） === */
+.mg-team-card .mg-team-hint {
+  margin: 0 0 12px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.mg-team-chips-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -4px 16px;
+  padding: 0 4px 6px;
+}
+.mg-team-chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+.mg-team-chip {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 72px;
+  max-width: 104px;
+  padding: 10px 8px 8px;
+  border-radius: 999px;
+  border: 2px solid #e2e8f0;
+  background: var(--surface);
+  cursor: pointer;
+  font: inherit;
+  color: var(--text);
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.mg-team-chip--active {
+  border-color: var(--brand);
+  background: linear-gradient(180deg, rgba(14, 165, 233, 0.08) 0%, var(--surface) 100%);
+  box-shadow: 0 2px 10px var(--header-shadow);
+}
+html[data-brand="levela"] .mg-team-chip--active {
+  background: linear-gradient(180deg, rgba(225, 29, 72, 0.08) 0%, var(--surface) 100%);
+}
+.mg-team-chip-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #e0f2fe 0%, #bae6fd 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--brand-dark);
+}
+html[data-brand="levela"] .mg-team-chip-avatar {
+  background: linear-gradient(145deg, #ffe4e6 0%, #fecdd3 100%);
+  color: #9f1239;
+}
+.mg-team-chip-name {
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-all;
+}
+.mg-team-detail {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 14px;
+}
+.mg-team-detail-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+.mg-team-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.mg-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  max-width: 100%;
+}
+.mg-pill-class {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+html[data-brand="levela"] .mg-pill-class {
+  background: #fce7f3;
+  color: #9d174d;
+}
+.mg-pill-period {
+  background: #f1f5f9;
+  color: var(--muted);
+}
+.mg-team-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 14px 0 12px;
+}
+.mg-metric {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+}
+.mg-metric-lbl {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.mg-metric-val {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.mg-metric-unit {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-left: 2px;
+}
+.mg-team-progress-block {
+  margin-bottom: 14px;
+}
+.mg-team-progress-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.mg-team-progress-pct {
+  color: var(--brand);
+}
+.mg-team-bar {
+  height: 10px;
+}
+.mg-team-progress-sub {
+  margin: 6px 0 0;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.mg-team-today-lbl {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.mg-team-today-empty {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.mg-team-today-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+}
+.mg-mini-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: var(--text);
+}
+.mg-mini-chip--done {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #065f46;
+}
+.mg-mini-chip-ico {
+  flex-shrink: 0;
+}
+.mg-mini-chip-txt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+.mg-mini-chip-check {
+  flex-shrink: 0;
+  color: var(--ok);
+  font-weight: 700;
+}
+.mg-team-alert {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #991b1b;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.mg-team-footnote {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: center;
+  margin: 12px 0 0;
+}
+
 .hidden {
   display: none !important;
 }
@@ -4291,6 +4513,94 @@ html[data-brand="snsclub"] .rm-recurring-freq {
   border-bottom: 1px solid #e2e8f0;
 }
 
+.rm-session-card--all-tasks-done {
+  border-color: rgba(34, 197, 94, 0.4);
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.1);
+}
+
+.rm-session-progress-wrap {
+  margin: -4px 0 10px;
+  padding: 0 2px;
+}
+
+.rm-session-progress-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.rm-session-progress-line .rm-session-count {
+  margin-left: 0;
+}
+
+.rm-session-all-done-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #15803d;
+  background: rgba(34, 197, 94, 0.14);
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+
+html[data-brand="snsclub"] .rm-session-all-done-badge {
+  color: #166534;
+  background: rgba(22, 101, 52, 0.12);
+}
+
+.rm-session-progress-track {
+  height: 7px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+
+.rm-session-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--brand), #0ea5e9);
+  transition: width 0.35s ease;
+}
+
+.rm-session-card--all-tasks-done .rm-session-progress-fill {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+html[data-brand="snsclub"] .rm-session-progress-fill {
+  background: linear-gradient(90deg, #c9a227, #d4a017);
+}
+
+html[data-brand="snsclub"] .rm-session-card--all-tasks-done .rm-session-progress-fill {
+  background: linear-gradient(90deg, #22c55e, #15803d);
+}
+
+.rm-session-check-all-row {
+  margin: 8px 0 4px;
+}
+
+.rm-session-check-all-btn {
+  width: 100%;
+}
+
+.rm-session-next-datetime-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.rm-session-next-datetime-row .rm-session-next-date {
+  flex: 1 1 160px;
+  min-width: 140px;
+}
+
+.rm-session-next-time-select {
+  flex: 1 1 120px;
+  min-width: 108px;
+  font-size: 0.82rem;
+}
+
 .rm-session-title-block {
   flex: 1;
   min-width: 0;
@@ -4807,6 +5117,12 @@ html[data-brand="snsclub"] .rm-session-count {
   color: #fff;
 }
 
+.rm-session-task-check.done.rm-session-task-check--post {
+  border-color: #c2410c;
+  background: linear-gradient(180deg, #fb923c 0%, #ea580c 100%);
+  color: #fff;
+}
+
 .rm-session-task-body {
   flex: 1;
   display: flex;
@@ -5064,15 +5380,6 @@ html[data-brand="snsclub"] .rm-session-task-due {
     student: '生徒',
   };
 
-  function formatRoleLabel(u) {
-    if (!u) return '';
-    var base = ROLE_LABELS[u.role] || u.role;
-    if (u.role === 'manager' && u.links && u.links.isLeader) {
-      return base + '・リーダー兼任';
-    }
-    return base;
-  }
-
   const TASK_TYPE_LABELS = {
     post_goal: '投稿',
     coaching_session: 'コーチング',
@@ -5224,12 +5531,10 @@ html[data-brand="snsclub"] .rm-session-task-due {
     'リール台本作成',
   ];
 
-  /** @type {{ users: object[], tasks: object[], teams?: object[], managerInviteTokens?: object[], messages: object[], consultations: object[], bookings: object[], memos: object[], passwordResetTokens?: object[] }} */
+  /** @type {{ users: object[], tasks: object[], messages: object[], consultations: object[], bookings: object[], memos: object[], passwordResetTokens?: object[] }} */
   let db = {
     users: [],
     tasks: [],
-    teams: [],
-    managerInviteTokens: [],
     messages: [],
     consultations: [],
     bookings: [],
@@ -5269,8 +5574,6 @@ html[data-brand="snsclub"] .rm-session-task-due {
         if (!Array.isArray(db.activityLog)) db.activityLog = [];
         if (!Array.isArray(db.passwordResetTokens)) db.passwordResetTokens = [];
         if (!Array.isArray(db.sessionTaskLibrary)) db.sessionTaskLibrary = [];
-        if (!Array.isArray(db.teams)) db.teams = [];
-        if (!Array.isArray(db.managerInviteTokens)) db.managerInviteTokens = [];
         migrateDbAll();
         return;
       }
@@ -5295,7 +5598,6 @@ html[data-brand="snsclub"] .rm-session-task-due {
     migrateCoachingSessionExtendedFields();
     migrateStudentTasksCleanup();
     migrateDbTasksCompletedAt();
-    migrateDbTeamsManagerInvites();
     ensureCoreStudentTasks();
   }
 
@@ -5314,43 +5616,6 @@ html[data-brand="snsclub"] .rm-session-task-due {
     if (db.sessionTaskLibrary.length === 0) {
       db.sessionTaskLibrary = SESSION_TASK_LIBRARY.slice();
     }
-  }
-
-  /** チーム・招待トークン・スタッフ/生徒の links を補完 */
-  function migrateDbTeamsManagerInvites() {
-    if (!Array.isArray(db.teams)) db.teams = [];
-    if (!Array.isArray(db.managerInviteTokens)) db.managerInviteTokens = [];
-    var leaderSeed = 'user-leader-1';
-    if (db.teams.length === 0 && Array.isArray(db.users)) {
-      var hasLeader = db.users.some(function (u) {
-        return u && u.id === leaderSeed && u.role === 'leader';
-      });
-      if (hasLeader) {
-        db.teams.push({ id: 'team-seed-alpha', name: 'αチーム（デモ）', leaderUserId: leaderSeed });
-      }
-    }
-    db.users.forEach(function (u) {
-      if (!u || !u.role) return;
-      if (!u.links || typeof u.links !== 'object') u.links = {};
-      if (u.role === 'manager') {
-        if (u.links.isLeader === undefined) u.links.isLeader = false;
-        if (u.links.teamId === undefined) u.links.teamId = '';
-        if (u.links.leaderId === undefined) u.links.leaderId = '';
-      }
-      if (u.role === 'leader' || u.role === 'coach') {
-        if (u.links.teamId === undefined) u.links.teamId = '';
-      }
-      if (u.role === 'student') {
-        if (u.links.teamId === undefined) u.links.teamId = '';
-        var mgr = u.links.managerId ? db.users.find(function (x) { return x.id === u.links.managerId; }) : null;
-        if (mgr && mgr.links && mgr.links.teamId && !u.links.teamId) {
-          u.links.teamId = mgr.links.teamId;
-        }
-        if (!u.links.teamId && db.teams.length === 1 && u.links.leaderId === db.teams[0].leaderUserId) {
-          u.links.teamId = db.teams[0].id;
-        }
-      }
-    });
   }
 
   function migrateCoachingSessionExtendedFields() {
@@ -5530,6 +5795,7 @@ html[data-brand="snsclub"] .rm-session-task-due {
     if (p.youtube === undefined) p.youtube = '';
     if (p.avatarDataUrl === undefined) p.avatarDataUrl = '';
     if (p.startDate === undefined) p.startDate = '';
+    if (p.supportEndDate === undefined) p.supportEndDate = '';
     if (p.visionLife === undefined) p.visionLife = '';
     if (p.goalHalfYear === undefined) p.goalHalfYear = '';
     if (p.goalPostCount === undefined) {
@@ -5782,8 +6048,6 @@ html[data-brand="snsclub"] .rm-session-task-due {
     const studentA = 'user-stu-1';
     const studentB = 'user-stu-2';
 
-    const teamAlpha = 'team-seed-alpha';
-
     db.users = [
       {
         id: 'user-admin-1',
@@ -5799,7 +6063,7 @@ html[data-brand="snsclub"] .rm-session-task-due {
         password: 'demo123',
         name: '山田リーダー',
         role: 'leader',
-        links: { teamId: teamAlpha },
+        links: {},
       },
       {
         id: coachId,
@@ -5807,7 +6071,7 @@ html[data-brand="snsclub"] .rm-session-task-due {
         password: 'demo123',
         name: '佐藤コーチ',
         role: 'coach',
-        links: { teamId: teamAlpha },
+        links: {},
       },
       {
         id: managerId,
@@ -5815,7 +6079,7 @@ html[data-brand="snsclub"] .rm-session-task-due {
         password: 'demo123',
         name: '鈴木MG',
         role: 'manager',
-        links: { leaderId, teamId: teamAlpha, isLeader: false },
+        links: { leaderId },
       },
       {
         id: studentA,
@@ -5823,9 +6087,17 @@ html[data-brand="snsclub"] .rm-session-task-due {
         password: 'demo123',
         name: '太郎さん（デモ生徒）',
         role: 'student',
-        links: { managerId, coachId, leaderId, teamId: teamAlpha },
+        links: { managerId, coachId, leaderId },
         milestones: { line18DueDate: '', firstLessonDoneDate: '' },
-        profile: { className: '4期生', instagram: '', tiktok: '', youtube: '', avatarDataUrl: '', startDate: '2026-03-01' },
+        profile: {
+          className: '4期生',
+          instagram: '',
+          tiktok: '',
+          youtube: '',
+          avatarDataUrl: '',
+          startDate: '2026-03-01',
+          supportEndDate: '2026-09-30',
+        },
       },
       {
         id: studentB,
@@ -5833,14 +6105,20 @@ html[data-brand="snsclub"] .rm-session-task-due {
         password: 'demo123',
         name: '花子さん（デモ生徒）',
         role: 'student',
-        links: { managerId, coachId, leaderId, teamId: teamAlpha },
+        links: { managerId, coachId, leaderId },
         milestones: { line18DueDate: '', firstLessonDoneDate: '' },
-        profile: { className: '4期生', instagram: '', tiktok: '', youtube: '', avatarDataUrl: '', startDate: '2026-03-15' },
+        profile: {
+          className: '4期生',
+          instagram: '',
+          tiktok: '',
+          youtube: '',
+          avatarDataUrl: '',
+          startDate: '2026-03-15',
+          supportEndDate: '2026-10-15',
+        },
       },
     ];
 
-    db.teams = [{ id: teamAlpha, name: 'αチーム（デモ）', leaderUserId: leaderId }];
-    db.managerInviteTokens = [];
     db.tasks = [];
   }
 
@@ -5868,20 +6146,6 @@ html[data-brand="snsclub"] .rm-session-task-due {
     return db.users.find((u) => u.id === id);
   }
 
-  function teamLedByUserId(userId) {
-    if (!userId || !Array.isArray(db.teams)) return null;
-    return db.teams.find(function (t) { return t && t.leaderUserId === userId; }) || null;
-  }
-
-  function studentInLeadersScope(st, leaderUserId) {
-    if (!st || !leaderUserId) return false;
-    var links = st.links || {};
-    if (links.leaderId === leaderUserId) return true;
-    var team = teamLedByUserId(leaderUserId);
-    if (team && links.teamId && links.teamId === team.id) return true;
-    return false;
-  }
-
   function canViewStudent(viewer, studentUserId) {
     if (!viewer) return false;
     const st = getUserById(studentUserId);
@@ -5891,12 +6155,7 @@ html[data-brand="snsclub"] .rm-session-task-due {
     const links = st.links || {};
     if (viewer.role === 'manager' && links.managerId === viewer.id) return true;
     if (viewer.role === 'coach' && links.coachId === viewer.id) return true;
-    if (viewer.role === 'leader') {
-      return studentInLeadersScope(st, viewer.id);
-    }
-    if (viewer.role === 'manager' && viewer.links && viewer.links.isLeader) {
-      return studentInLeadersScope(st, viewer.id);
-    }
+    if (viewer.role === 'leader' && links.leaderId === viewer.id) return true;
     return false;
   }
 
@@ -5907,374 +6166,6 @@ html[data-brand="snsclub"] .rm-session-task-due {
     return getStudentUsers()
       .filter((s) => canViewStudent(viewer, s.id))
       .map((s) => s.id);
-  }
-
-  function createManagerInviteToken(managerUserId) {
-    var mgr = getUserById(managerUserId);
-    if (!mgr || mgr.role !== 'manager') return null;
-    if (!Array.isArray(db.managerInviteTokens)) db.managerInviteTokens = [];
-    var token =
-      Date.now().toString(36) +
-      '-' +
-      Math.random().toString(36).slice(2, 10);
-    db.managerInviteTokens.push({
-      id: uid('minv'),
-      managerUserId: managerUserId,
-      token: token,
-      createdAt: new Date().toISOString(),
-    });
-    saveDb();
-    return token;
-  }
-
-  function managerInviteUrl(token) {
-    try {
-      var u = new URL(window.location.href);
-      u.searchParams.set('join', token);
-      return u.toString();
-    } catch (e) {
-      return '?join=' + encodeURIComponent(token);
-    }
-  }
-
-  function applyManagerInviteFromQuery() {
-    try {
-      var params = new URLSearchParams(window.location.search);
-      var token = params.get('join');
-      if (!token || !sessionUser || sessionUser.role !== 'student') return;
-      var tokens = db.managerInviteTokens || [];
-      var entry = tokens.find(function (t) {
-        return t && String(t.token) === String(token);
-      });
-      if (!entry) return;
-      var mgr = getUserById(entry.managerUserId);
-      if (!mgr || mgr.role !== 'manager') return;
-      var st = getUserById(sessionUser.id);
-      if (!st || st.role !== 'student') return;
-      if (!st.links) st.links = {};
-      st.links.managerId = mgr.id;
-      if (mgr.links) {
-        if (mgr.links.leaderId) st.links.leaderId = mgr.links.leaderId;
-        if (mgr.links.teamId) st.links.teamId = mgr.links.teamId;
-      }
-      saveDb();
-      sessionUser = loadSession();
-      var url = new URL(window.location.href);
-      url.searchParams.delete('join');
-      var next = url.pathname + (url.search || '') + (url.hash || '');
-      window.history.replaceState({}, '', next);
-      alert('担当マネージャーに紐づけました（保存済み）。');
-      renderAll();
-    } catch (err) {
-      console.warn(err);
-    }
-  }
-
-  function leaderOptionsHtml() {
-    var html = '<option value="">（未設定）</option>';
-    db.users.forEach(function (u) {
-      if (!u) return;
-      if (u.role === 'leader') {
-        html += '<option value="' + escapeHtml(u.id) + '">' + escapeHtml(u.name) + '（リーダー）</option>';
-      }
-      if (u.role === 'manager' && u.links && u.links.isLeader) {
-        html +=
-          '<option value="' +
-          escapeHtml(u.id) +
-          '">' +
-          escapeHtml(u.name) +
-          '（MG・リーダー兼任）</option>';
-      }
-    });
-    return html;
-  }
-
-  function adminOrgManagementHtml() {
-    if (!sessionUser || sessionUser.role !== 'admin') return '';
-    var html = '<div class="card" style="margin-bottom:14px;">';
-    html += '<p class="card-title">組織・ロール管理（管理者）</p>';
-    html +=
-      '<p style="margin:0 0 12px;font-size:0.82rem;color:var(--muted);line-height:1.5;">チーム・リーダー・MGの関係、生徒の担当紐付け、MG用の招待リンクをここで操作できます。MGがリーダー業務も行う場合はロールは「マネージャー」のまま「リーダー権限を兼ねる」にチェックしてください。</p>';
-
-    html += '<p style="font-weight:700;font-size:0.88rem;margin:0 0 8px;">チーム</p>';
-    html += '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end;margin-bottom:12px;">';
-    html += '<div style="flex:1;min-width:140px;"><label class="label">チーム名</label><input type="text" id="adminNewTeamName" class="input" placeholder="例：αチーム" maxlength="40" /></div>';
-    html +=
-      '<div style="flex:1;min-width:160px;"><label class="label">チームのリーダー</label><select id="adminNewTeamLeader" class="input">' +
-      leaderOptionsHtml() +
-      '</select></div>';
-    html += '<button type="button" class="btn btn-primary" id="btnAdminAddTeam">チームを追加</button></div>';
-
-    html += '<div style="font-size:0.8rem;margin-bottom:16px;">';
-    (db.teams || []).forEach(function (t) {
-      var ld = t.leaderUserId ? getUserById(t.leaderUserId) : null;
-      html +=
-        '<div style="padding:8px 0;border-bottom:1px solid #f1f5f9;display:flex;justify-content:space-between;align-items:center;gap:8px;">';
-      html +=
-        '<span><strong>' +
-        escapeHtml(t.name) +
-        '</strong><span style="color:var(--muted);"> · リーダー: ' +
-        escapeHtml(ld ? ld.name : '—') +
-        '</span></span>';
-      html +=
-        '<button type="button" class="btn btn-secondary btn-small" data-admin-del-team="' +
-        escapeHtml(t.id) +
-        '">削除</button></div>';
-    });
-    if (!(db.teams || []).length) html += '<p style="margin:0;color:var(--muted);">チームがありません</p>';
-    html += '</div>';
-
-    html += '<p style="font-weight:700;font-size:0.88rem;margin:0 0 8px;">スタッフ1人を選んで保存</p>';
-    html += '<label class="label">スタッフ</label><select id="adminStaffPick" class="input">';
-    html += '<option value="">選択</option>';
-    db.users.forEach(function (u) {
-      if (u.role === 'admin' || u.role === 'student') return;
-      html +=
-        '<option value="' +
-        escapeHtml(u.id) +
-        '">' +
-        escapeHtml(u.name) +
-        '（' +
-        escapeHtml(ROLE_LABELS[u.role] || u.role) +
-        '）</option>';
-    });
-    html += '</select>';
-    html += '<label class="label">ロール</label><select id="adminStaffRole" class="input">';
-    ['leader', 'coach', 'manager'].forEach(function (r) {
-      html += '<option value="' + r + '">' + escapeHtml(ROLE_LABELS[r] || r) + '</option>';
-    });
-    html += '</select>';
-    html +=
-      '<label class="label" style="display:flex;align-items:center;gap:8px;margin-top:8px;"><input type="checkbox" id="adminStaffIsLeader" /> マネージャーでリーダー権限を兼ねる（チーム単位で生徒を俯瞰）</label>';
-    html += '<label class="label">所属チーム</label><select id="adminStaffTeam" class="input"><option value="">（なし）</option>';
-    (db.teams || []).forEach(function (t) {
-      html += '<option value="' + escapeHtml(t.id) + '">' + escapeHtml(t.name) + '</option>';
-    });
-    html += '</select>';
-    html +=
-      '<label class="label">上司リーダー（MG向け）</label><select id="adminStaffLeader" class="input">' +
-      leaderOptionsHtml() +
-      '</select>';
-    html += '<button type="button" class="btn btn-primary" id="btnAdminSaveStaff" style="margin-top:10px;">スタッフを保存</button>';
-
-    html += '<p style="font-weight:700;font-size:0.88rem;margin:16px 0 8px;">生徒の担当を保存</p>';
-    html += '<label class="label">生徒</label><select id="adminStudentPick" class="input">';
-    html += '<option value="">選択</option>';
-    getStudentUsers().forEach(function (s) {
-      html += '<option value="' + escapeHtml(s.id) + '">' + escapeHtml(s.name) + '</option>';
-    });
-    html += '</select>';
-    html += '<label class="label">担当マネージャー</label><select id="adminStMgr" class="input"><option value="">（なし）</option>';
-    db.users.forEach(function (u) {
-      if (u.role === 'manager') html += '<option value="' + escapeHtml(u.id) + '">' + escapeHtml(u.name) + '</option>';
-    });
-    html += '</select>';
-    html += '<label class="label">コーチ</label><select id="adminStCoach" class="input"><option value="">（なし）</option>';
-    db.users.forEach(function (u) {
-      if (u.role === 'coach') html += '<option value="' + escapeHtml(u.id) + '">' + escapeHtml(u.name) + '</option>';
-    });
-    html += '</select>';
-    html +=
-      '<label class="label">リーダー（所属ライン）</label><select id="adminStLeader" class="input">' +
-      leaderOptionsHtml() +
-      '</select>';
-    html += '<label class="label">所属チーム</label><select id="adminStTeam" class="input"><option value="">（なし）</option>';
-    (db.teams || []).forEach(function (t) {
-      html += '<option value="' + escapeHtml(t.id) + '">' + escapeHtml(t.name) + '</option>';
-    });
-    html += '</select>';
-    html += '<button type="button" class="btn btn-primary" id="btnAdminSaveStudent" style="margin-top:10px;">生徒の紐付けを保存</button>';
-
-    html += '<p style="font-weight:700;font-size:0.88rem;margin:16px 0 8px;">担当MG用・招待リンク</p>';
-    html +=
-      '<p style="margin:0 0 8px;font-size:0.8rem;color:var(--muted);">生徒が<strong>ログインした状態</strong>でこのURLを開くと、そのMGの担当生徒として紐づきます。</p>';
-    html += '<select id="adminInviteManager" class="input">';
-    html += '<option value="">MGを選択</option>';
-    db.users.forEach(function (u) {
-      if (u.role === 'manager') html += '<option value="' + escapeHtml(u.id) + '">' + escapeHtml(u.name) + '</option>';
-    });
-    html += '</select>';
-    html += '<button type="button" class="btn btn-secondary" id="btnAdminGenInvite" style="margin-top:8px;">リンクを発行</button>';
-    html += '<div id="adminInviteOut" style="margin-top:10px;font-size:0.78rem;word-break:break-all;"></div>';
-    html += '</div>';
-    return html;
-  }
-
-  function adminOrgSyncStaffPicker() {
-    var idEl = document.getElementById('adminStaffPick');
-    if (!idEl) return;
-    var id = idEl.value;
-    var roleEl = document.getElementById('adminStaffRole');
-    var isL = document.getElementById('adminStaffIsLeader');
-    var teamEl = document.getElementById('adminStaffTeam');
-    var ldEl = document.getElementById('adminStaffLeader');
-    if (!id) {
-      if (roleEl) roleEl.value = 'manager';
-      if (isL) isL.checked = false;
-      if (teamEl) teamEl.value = '';
-      if (ldEl) ldEl.value = '';
-      return;
-    }
-    var u = getUserById(id);
-    if (!u) return;
-    if (roleEl) roleEl.value = u.role === 'admin' ? 'manager' : u.role;
-    if (isL) isL.checked = !!(u.links && u.links.isLeader);
-    if (teamEl) teamEl.value = (u.links && u.links.teamId) || '';
-    if (ldEl) ldEl.value = (u.links && u.links.leaderId) || '';
-  }
-
-  function adminOrgSyncStudentPicker() {
-    var idEl = document.getElementById('adminStudentPick');
-    if (!idEl) return;
-    var id = idEl.value;
-    var mEl = document.getElementById('adminStMgr');
-    var cEl = document.getElementById('adminStCoach');
-    var ldEl = document.getElementById('adminStLeader');
-    var tEl = document.getElementById('adminStTeam');
-    if (!id) {
-      if (mEl) mEl.value = '';
-      if (cEl) cEl.value = '';
-      if (ldEl) ldEl.value = '';
-      if (tEl) tEl.value = '';
-      return;
-    }
-    var u = getUserById(id);
-    if (!u || u.role !== 'student') return;
-    var l = u.links || {};
-    if (mEl) mEl.value = l.managerId || '';
-    if (cEl) cEl.value = l.coachId || '';
-    if (ldEl) ldEl.value = l.leaderId || '';
-    if (tEl) tEl.value = l.teamId || '';
-  }
-
-  function bindAdminOrgManagement(container) {
-    if (!container || container.dataset.adminOrgBound === '1') return;
-    container.dataset.adminOrgBound = '1';
-
-    container.addEventListener('change', function (e) {
-      if (!sessionUser || sessionUser.role !== 'admin') return;
-      if (e.target && e.target.id === 'adminStaffPick') adminOrgSyncStaffPicker();
-      if (e.target && e.target.id === 'adminStudentPick') adminOrgSyncStudentPicker();
-    });
-
-    container.addEventListener('click', function (e) {
-      if (!sessionUser || sessionUser.role !== 'admin') return;
-      var t = e.target;
-      if (t && t.closest && t.closest('#btnAdminAddTeam')) {
-        var nameEl = document.getElementById('adminNewTeamName');
-        var ldEl = document.getElementById('adminNewTeamLeader');
-        var name = nameEl && nameEl.value.trim();
-        if (!name) {
-          alert('チーム名を入力してください。');
-          return;
-        }
-        var lid = ldEl ? ldEl.value : '';
-        if (!lid) {
-          alert('チームのリーダーを選んでください。');
-          return;
-        }
-        var leaderUser = getUserById(lid);
-        var okLeader =
-          leaderUser &&
-          (leaderUser.role === 'leader' ||
-            (leaderUser.role === 'manager' && leaderUser.links && leaderUser.links.isLeader));
-        if (!okLeader) {
-          alert('リーダーとして設定できるユーザー（リーダーロール、またはリーダー兼任MG）を選んでください。');
-          return;
-        }
-        db.teams.push({
-          id: uid('team'),
-          name: name,
-          leaderUserId: lid,
-        });
-        saveDb();
-        renderAll();
-        return;
-      }
-      var delBtn = t && t.closest ? t.closest('[data-admin-del-team]') : null;
-      if (delBtn) {
-        var tid = delBtn.getAttribute('data-admin-del-team');
-        if (!confirm('このチームを削除しますか？（ユーザーに保存された teamId はそのまま残ります）')) return;
-        db.teams = (db.teams || []).filter(function (team) {
-          return team.id !== tid;
-        });
-        saveDb();
-        renderAll();
-        return;
-      }
-      if (t && t.closest && t.closest('#btnAdminSaveStaff')) {
-        var sid = document.getElementById('adminStaffPick').value;
-        if (!sid) {
-          alert('スタッフを選んでください。');
-          return;
-        }
-        var u = getUserById(sid);
-        if (!u) return;
-        var role = document.getElementById('adminStaffRole').value;
-        var isLeader = document.getElementById('adminStaffIsLeader').checked;
-        var teamId = document.getElementById('adminStaffTeam').value;
-        var leaderId = document.getElementById('adminStaffLeader').value;
-        if (role !== 'leader' && role !== 'coach' && role !== 'manager') {
-          alert('ロールが不正です。');
-          return;
-        }
-        u.role = role;
-        if (!u.links) u.links = {};
-        u.links.teamId = teamId || '';
-        if (role === 'manager') {
-          u.links.leaderId = leaderId || '';
-          u.links.isLeader = !!isLeader;
-        } else {
-          u.links.leaderId = '';
-          u.links.isLeader = false;
-        }
-        saveDb();
-        alert('スタッフ情報を保存しました。');
-        renderAll();
-        return;
-      }
-      if (t && t.closest && t.closest('#btnAdminSaveStudent')) {
-        var stuId = document.getElementById('adminStudentPick').value;
-        if (!stuId) {
-          alert('生徒を選んでください。');
-          return;
-        }
-        var stu = getUserById(stuId);
-        if (!stu || stu.role !== 'student') return;
-        if (!stu.links) stu.links = {};
-        stu.links.managerId = document.getElementById('adminStMgr').value || '';
-        stu.links.coachId = document.getElementById('adminStCoach').value || '';
-        stu.links.leaderId = document.getElementById('adminStLeader').value || '';
-        stu.links.teamId = document.getElementById('adminStTeam').value || '';
-        saveDb();
-        alert('生徒の紐付けを保存しました。');
-        renderAll();
-        return;
-      }
-      if (t && t.closest && t.closest('#btnAdminGenInvite')) {
-        var mid = document.getElementById('adminInviteManager').value;
-        if (!mid) {
-          alert('MGを選んでください。');
-          return;
-        }
-        var tok = createManagerInviteToken(mid);
-        if (!tok) return;
-        var url = managerInviteUrl(tok);
-        var out = document.getElementById('adminInviteOut');
-        if (out) {
-          out.innerHTML =
-            '<label class="label">発行URL</label><textarea class="input" rows="2" readonly style="font-size:0.75rem;">' +
-            escapeHtml(url) +
-            '</textarea><p style="margin:6px 0 0;font-size:0.72rem;color:var(--muted);">生徒に共有し、ログイン後に開いてもらってください。</p>';
-        }
-        try {
-          navigator.clipboard.writeText(url);
-          alert('リンクをクリップボードにコピーしました。');
-        } catch (err) {
-          /* ignore */
-        }
-      }
-    });
   }
 
   function tasksForViewer() {
@@ -6483,14 +6374,13 @@ html[data-brand="snsclub"] .rm-session-task-due {
     setupNav();
     setTab('home');
     renderAll();
-    applyManagerInviteFromQuery();
   }
 
   function updateHeader() {
     const u = sessionUser;
     document.getElementById('headerTitle').textContent = u ? 'じょーず 🦈' : 'ログイン';
     document.getElementById('headerSub').textContent = u ? '' : '';
-    document.getElementById('roleChip').textContent = u ? formatRoleLabel(u) : '';
+    document.getElementById('roleChip').textContent = u ? ROLE_LABELS[u.role] || u.role : '';
     updateQuickConsultButton();
   }
 
@@ -6681,6 +6571,53 @@ html[data-brand="snsclub"] .rm-session-task-due {
       if (ac !== 'その他' && t.indexOf(ac) !== -1) return ac;
     }
     return 'コーチングセッション';
+  }
+
+  /** セッションタスクのうち「投稿」系（チェックをカレンダーの投稿色に合わせる） */
+  function isSessionPostTaskTitle(title) {
+    var t = String(title || '').trim();
+    if (!t) return false;
+    if (t === '投稿する') return true;
+    if (t.indexOf('投稿') !== -1) return true;
+    return sessionTaskCategoryGuess(t) === '投稿予定';
+  }
+
+  function snapTimeToQuarterHour(hhmm) {
+    var m = /^(\d{1,2}):(\d{2})$/.exec(String(hhmm || '').trim());
+    if (!m) return '09:00';
+    var h = parseInt(m[1], 10);
+    var min = parseInt(m[2], 10);
+    if (isNaN(h) || isNaN(min)) return '09:00';
+    h = Math.min(23, Math.max(0, h));
+    min = Math.min(59, Math.max(0, min));
+    var total = h * 60 + min;
+    var snapped = Math.round(total / 15) * 15;
+    if (snapped >= 24 * 60) snapped = 23 * 60 + 45;
+    var nh = Math.floor(snapped / 60);
+    var nm = snapped % 60;
+    return (nh < 10 ? '0' : '') + nh + ':' + (nm < 10 ? '0' : '') + nm;
+  }
+
+  function composeNextSessionAtFromParts(dateStr, timeStr) {
+    var d = String(dateStr || '').trim();
+    if (!d) return '';
+    var t = snapTimeToQuarterHour(timeStr || '09:00');
+    return d + 'T' + t;
+  }
+
+  function nextSessionQuarterHourOptionsHtml(selectedHhmm) {
+    var sel = snapTimeToQuarterHour(selectedHhmm || '09:00');
+    var out = '';
+    for (var h = 0; h < 24; h++) {
+      for (var q = 0; q < 4; q++) {
+        var mm = q * 15;
+        var hh = (h < 10 ? '0' : '') + h;
+        var mms = (mm < 10 ? '0' : '') + mm;
+        var val = hh + ':' + mms;
+        out += '<option value="' + val + '"' + (val === sel ? ' selected' : '') + '>' + val + '</option>';
+      }
+    }
+    return out;
   }
 
   function isRecurringDoneOnDate(u, rtId, dateIso) {
@@ -7560,6 +7497,85 @@ html[data-brand="snsclub"] .rm-session-task-due {
     renderAll();
   }
 
+  function teamOverviewStorageKey() {
+    return 'jouzuTeamOverviewStudent:' + (sessionUser && sessionUser.id ? sessionUser.id : '');
+  }
+
+  function getStoredTeamOverviewStudentId(validIds) {
+    try {
+      var v = localStorage.getItem(teamOverviewStorageKey());
+      if (v && validIds.indexOf(v) >= 0) return v;
+    } catch (e) { /* ignore */ }
+    return '';
+  }
+
+  function setStoredTeamOverviewStudentId(sid) {
+    try {
+      if (sid) localStorage.setItem(teamOverviewStorageKey(), sid);
+      else localStorage.removeItem(teamOverviewStorageKey());
+    } catch (e) { /* ignore */ }
+  }
+
+  function supportEndDateForStudent(u) {
+    if (!u || u.role !== 'student') return '';
+    ensureProfile(u);
+    if (u.profile.supportEndDate) return u.profile.supportEndDate;
+    return graduationDateOf(u) || '';
+  }
+
+  function supportPeriodText(u) {
+    if (!u || u.role !== 'student') return '—';
+    ensureProfile(u);
+    var start = u.profile.startDate || '';
+    var end = supportEndDateForStudent(u);
+    if (!start && !end) return '未設定';
+    var a = start ? shortDate(start) : '？';
+    var b = end ? shortDate(end) : '？';
+    return a + ' 〜 ' + b;
+  }
+
+  function taskProgressSummaryForStudent(sid) {
+    var ts = db.tasks.filter(function (t) { return t.studentUserId === sid; });
+    if (!ts.length) {
+      return { pct: 0, label: 'タスクなし', open: 0, total: 0, done: 0 };
+    }
+    var cur = 0;
+    var tgt = 0;
+    ts.forEach(function (t) {
+      var tn = parseInt(t.targetNumber, 10) || 0;
+      if (tn < 1) return;
+      cur += Math.min(tn, parseInt(t.currentNumber, 10) || 0);
+      tgt += tn;
+    });
+    var open = ts.filter(function (t) { return !isTaskDone(t); }).length;
+    var done = ts.length - open;
+    if (tgt <= 0) {
+      var pct = open ? 0 : 100;
+      return {
+        pct: pct,
+        label: open ? '未完了 ' + open + '件' : 'すべて完了',
+        open: open,
+        total: ts.length,
+        done: done,
+      };
+    }
+    var pct = Math.min(100, Math.round((cur / tgt) * 100));
+    return {
+      pct: pct,
+      label: cur + ' / ' + tgt + '（回数ベース）',
+      open: open,
+      total: ts.length,
+      done: done,
+    };
+  }
+
+  function todayAgendaChipsForStudent(u) {
+    if (!u || u.role !== 'student') return [];
+    return buildHomeAgendaItems(u).filter(function (it) {
+      return it.sortDate === todayIso();
+    });
+  }
+
   function renderTeam() {
     const el = document.getElementById('teamContent');
     if (!el) return;
@@ -7567,61 +7583,111 @@ html[data-brand="snsclub"] .rm-session-task-due {
       el.innerHTML = '';
       return;
     }
-    let html = '';
-    if (sessionUser.role === 'admin') {
-      html += adminOrgManagementHtml();
-    }
     const ids = visibleStudentIds(sessionUser);
-    html += '<div class="card"><p class="card-title">チームの生徒</p>';
+    let html = '<div class="card mg-team-card"><p class="card-title">担当生徒</p>';
     if (ids.length === 0) {
       html += '<div class="empty-state">表示できる生徒がいません</div></div>';
       el.innerHTML = html;
       return;
     }
-    ids.forEach((sid) => {
-      const s = getUserById(sid);
-      ensureMilestones(s);
-      const m = s.milestones;
-      const ts = db.tasks.filter((t) => t.studentUserId === sid);
-      const open = ts.filter((t) => !isTaskDone(t)).length;
-      const overdueCount = ts.filter((t) => isOverdue(t)).length;
-      const totalReschedules = ts.reduce(function (s, t) { return s + (t.rescheduleCount || 0); }, 0);
-      const ten = tenLessonsDeadlineFrom(m.firstLessonDoneDate);
-      const consultCount = (db.consultations || []).filter(function (c) { return c.studentUserId === sid; }).length;
-      html += '<div style="padding:12px 0;border-bottom:1px solid #f1f5f9;">';
-      html += '<div style="display:flex;align-items:center;justify-content:space-between;">';
-      html += '<div style="font-weight:700;">' + escapeHtml(s.name);
-      if (overdueCount > 0) html += ' <span style="font-size:0.65rem;background:var(--danger);color:#fff;padding:1px 6px;border-radius:99px;font-weight:600;">' + overdueCount + '件超過</span>';
-      html += '</div>';
-      html += '</div>';
-      html += '<div style="font-size:0.8rem;color:var(--muted);margin-top:4px;">タスク ' + ts.length + '件（未完了 ' + open + '）</div>';
-      if (totalReschedules > 0) {
-        html += '<span class="mline-mini" style="color:var(--warn);">リスケ計 ' + totalReschedules + '回</span>';
-      }
-      if (consultCount > 0) {
-        html += '<span class="mline-mini">相談 ' + consultCount + '件</span>';
-      }
-      if (m.line18DueDate) {
-        html += '<span class="mline-mini">LINE18納期: ' + shortDate(m.line18DueDate) + '</span>';
-      }
-      if (ten) {
-        html +=
-          '<span class="mline-mini ' +
-          dueClass(ten) +
-          '">1〜10投稿目安: ' +
-          escapeHtml(ten) +
-          '</span>';
-      }
-      html += '</div>';
+    var selected = getStoredTeamOverviewStudentId(ids) || ids[0];
+    html += '<p class="mg-team-hint">チップで生徒を切り替え、今日の予定と進捗を横並びで確認できます。</p>';
+    html += '<div class="mg-team-chips-scroll"><div class="mg-team-chips" role="tablist" aria-label="担当生徒">';
+    ids.forEach(function (sid) {
+      var s = getUserById(sid);
+      var active = sid === selected ? ' mg-team-chip--active' : '';
+      var initial = (s.name || '?').trim().charAt(0) || '?';
+      html +=
+        '<button type="button" class="mg-team-chip' +
+        active +
+        '" data-mg-team-chip="' +
+        escapeHtml(sid) +
+        '" role="tab" aria-selected="' +
+        (sid === selected ? 'true' : 'false') +
+        '">';
+      html += '<span class="mg-team-chip-avatar" aria-hidden="true">' + escapeHtml(initial) + '</span>';
+      html += '<span class="mg-team-chip-name">' + escapeHtml(s.name) + '</span>';
+      html += '</button>';
     });
+    html += '</div></div>';
+
+    var selUser = getUserById(selected);
+    ensureProfile(selUser);
+    ensureMilestones(selUser);
+    var postsDone = completedPostCountForStudent(selected);
+    var tsum = taskProgressSummaryForStudent(selected);
+    var agendaToday = todayAgendaChipsForStudent(selUser);
+    var ts = db.tasks.filter(function (t) { return t.studentUserId === selected; });
+    var overdueCount = ts.filter(function (t) { return isOverdue(t); }).length;
+
+    html += '<div class="mg-team-detail">';
+    html += '<div class="mg-team-detail-head">';
+    html += '<div class="mg-team-detail-title">' + escapeHtml(selUser.name) + '</div>';
+    html += '<div class="mg-team-detail-meta">';
+    html += '<span class="mg-pill mg-pill-class">' + escapeHtml(selUser.profile.className || 'クラス未設定') + '</span>';
+    html += '<span class="mg-pill mg-pill-period">' + escapeHtml(supportPeriodText(selUser)) + '</span>';
+    html += '</div></div>';
+
+    html += '<div class="mg-team-metrics">';
+    html += '<div class="mg-metric"><span class="mg-metric-lbl">投稿完了</span><span class="mg-metric-val">' + postsDone + '<span class="mg-metric-unit">件</span></span></div>';
+    html +=
+      '<div class="mg-metric"><span class="mg-metric-lbl">タスク</span><span class="mg-metric-val">' +
+      tsum.done +
+      '/' +
+      tsum.total +
+      '</span></div>';
     html += '</div>';
-    html += '<p style="font-size:0.75rem;color:var(--muted);text-align:center;margin-top:12px;">詳細は「タスク」タブで確認・追加できます</p>';
-    el.innerHTML = html;
-    if (sessionUser.role === 'admin') {
-      bindAdminOrgManagement(el);
-      adminOrgSyncStaffPicker();
-      adminOrgSyncStudentPicker();
+
+    html += '<div class="mg-team-progress-block">';
+    html += '<div class="mg-team-progress-head"><span>タスク進捗</span><span class="mg-team-progress-pct">' + tsum.pct + '%</span></div>';
+    html +=
+      '<div class="early-sprint-bar-track mg-team-bar" title="カウント付きタスクの合計進捗"><div class="early-sprint-bar-fill early-sprint-bar-fill--posts" style="width:' +
+      tsum.pct +
+      '%"></div></div>';
+    html += '<p class="mg-team-progress-sub">' + escapeHtml(tsum.label) + '</p>';
+    html += '</div>';
+
+    html += '<div class="mg-team-today"><div class="mg-team-today-lbl">今日のタスク・予定</div>';
+    if (agendaToday.length === 0) {
+      html += '<p class="mg-team-today-empty">今日の予定はありません（生徒ホームの「今日の予定」と同じ内容です）。</p>';
+    } else {
+      html += '<div class="mg-team-today-chips">';
+      agendaToday.forEach(function (it) {
+        var doneCls = it.done ? ' mg-mini-chip--done' : '';
+        html +=
+          '<span class="mg-mini-chip' +
+          doneCls +
+          '"><span class="mg-mini-chip-ico" aria-hidden="true">' +
+          (it.icon || '') +
+          '</span><span class="mg-mini-chip-txt">' +
+          escapeHtml(it.label) +
+          '</span>' +
+          (it.done ? '<span class="mg-mini-chip-check">✓</span>' : '') +
+          '</span>';
+      });
+      html += '</div>';
     }
+    html += '</div>';
+
+    if (overdueCount > 0) {
+      html +=
+        '<p class="mg-team-alert">期限超過のタスクが ' +
+        overdueCount +
+        ' 件あります。「タスク」タブで確認してください。</p>';
+    }
+
+    html += '</div></div>';
+    html += '<p class="mg-team-footnote">詳細の追加・変更は「タスク」「スケジュール」タブから行えます。</p>';
+    el.innerHTML = html;
+
+    el.querySelectorAll('[data-mg-team-chip]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var sid = btn.getAttribute('data-mg-team-chip');
+        if (!sid) return;
+        setStoredTeamOverviewStudentId(sid);
+        renderTeam();
+      });
+    });
   }
 
   function renderLog() {
@@ -10125,6 +10191,22 @@ html[data-brand="snsclub"] .rm-session-task-due {
     renderHome();
   }
 
+  function markAllSessionTasksDone(sessionId) {
+    var session = db.coachingSessions.find(function (s) { return s.id === sessionId; });
+    if (!session || !session.tasks.length) return;
+    var d = todayIso();
+    session.tasks.forEach(function (t) {
+      if (!t.done) {
+        t.done = true;
+        t.doneDate = d;
+      }
+    });
+    saveDb();
+    renderRoadmap();
+    renderSchedule();
+    renderHome();
+  }
+
   function deleteSessionTask(sessionId, taskId) {
     var session = db.coachingSessions.find(function (s) { return s.id === sessionId; });
     if (!session) return;
@@ -10404,8 +10486,9 @@ html[data-brand="snsclub"] .rm-session-task-due {
         var msLabel = sessionMilestoneLabel(num);
         var totalTasks = sess.tasks.length;
         var doneTasks = sess.tasks.filter(function (t) { return t.done; }).length;
+        var progressPct = totalTasks > 0 ? Math.round((100 * doneTasks) / totalTasks) : 0;
 
-        html += '<div class="card rm-session-card">';
+        html += '<div class="card rm-session-card' + (totalTasks > 0 && doneTasks === totalTasks ? ' rm-session-card--all-tasks-done' : '') + '">';
         html += '<div class="rm-session-card-top">';
         html += '<div class="rm-session-title-block">';
         html += '<span class="rm-session-num">' + escapeHtml(msLabel) + '</span>';
@@ -10418,15 +10501,33 @@ html[data-brand="snsclub"] .rm-session-task-due {
         html += '<button type="button" class="btn btn-primary btn-small rm-session-date-save-inline" data-rm-session-date-save="' + escapeHtml(sess.id) + '">保存</button>';
         html += '</div>';
         html += '</div>';
-        if (totalTasks > 0) {
-          html += '<span class="rm-session-count">' + doneTasks + '/' + totalTasks + '</span>';
-        }
         html += '</div>';
+
+        if (totalTasks > 0) {
+          html += '<div class="rm-session-progress-wrap">';
+          html += '<div class="rm-session-progress-line">';
+          html += '<span class="rm-session-count">' + doneTasks + '/' + totalTasks + '</span>';
+          if (doneTasks === totalTasks) {
+            html += '<span class="rm-session-all-done-badge">すべて完了</span>';
+          }
+          html += '</div>';
+          html += '<div class="rm-session-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + progressPct + '">';
+          html += '<div class="rm-session-progress-fill" style="width:' + progressPct + '%"></div>';
+          html += '</div></div>';
+        }
 
         var tab = roadmapSessionCardTab[sess.id] || 'tasks';
         if (tab === 'meta') tab = 'next';
         var nextAtVal = (sess.nextSessionAt || '').trim();
-        var nextLocal = nextAtVal.length >= 16 ? nextAtVal.slice(0, 16) : nextAtVal;
+        var nextDate = '';
+        var nextTimeSnapped = '09:00';
+        if (nextAtVal.length >= 16) {
+          nextDate = nextAtVal.slice(0, 10);
+          nextTimeSnapped = snapTimeToQuarterHour(nextAtVal.slice(11, 16));
+        } else if (nextAtVal.length >= 10) {
+          nextDate = nextAtVal.slice(0, 10);
+        }
+        var hiddenNextVal = nextDate ? composeNextSessionAtFromParts(nextDate, nextTimeSnapped) : '';
 
         html += '<div class="rm-session-subtabs" role="tablist">';
         html += '<button type="button" role="tab" class="rm-session-subtab' + (tab === 'tasks' ? ' rm-session-subtab--active' : '') + '" data-rm-sess-tab="' + escapeHtml(sess.id) + '" data-rm-sess-tabkey="tasks">タスク</button>';
@@ -10437,8 +10538,10 @@ html[data-brand="snsclub"] .rm-session-task-due {
         html += '<div class="rm-session-panel"' + (tab !== 'tasks' ? ' style="display:none;"' : '') + ' data-rm-sess-panel="' + escapeHtml(sess.id) + '" data-panel="tasks">';
         sess.tasks.forEach(function (t) {
           var tcls = 'rm-session-task' + (t.done ? ' done' : '');
+          var postChk = isSessionPostTaskTitle(t.title);
+          var chkCls = 'rm-session-task-check' + (t.done ? ' done' : '') + (postChk ? ' rm-session-task-check--post' : '');
           html += '<div class="' + tcls + '">';
-          html += '<button type="button" class="rm-session-task-check' + (t.done ? ' done' : '') + '" data-toggle-stask="' + sess.id + '|' + t.id + '">' + (t.done ? '✓' : '○') + '</button>';
+          html += '<button type="button" class="' + chkCls + '" data-toggle-stask="' + sess.id + '|' + t.id + '">' + (t.done ? '✓' : '○') + '</button>';
           html += '<div class="rm-session-task-body">';
           html += '<span class="rm-session-task-title">' + escapeHtml(t.title) + '</span>';
           if (t.dueDate) {
@@ -10449,6 +10552,12 @@ html[data-brand="snsclub"] .rm-session-task-due {
           html += '<button type="button" class="rm-session-task-del" data-del-stask="' + sess.id + '|' + t.id + '" title="削除">✕</button>';
           html += '</div>';
         });
+
+        if (totalTasks > 0 && doneTasks < totalTasks) {
+          html += '<div class="rm-session-check-all-row">';
+          html += '<button type="button" class="btn btn-secondary btn-small rm-session-check-all-btn" data-rm-check-all-tasks="' + escapeHtml(sess.id) + '">すべて完了にする</button>';
+          html += '</div>';
+        }
 
         html += '<div class="rm-session-add-row">';
         html += '<select class="input rm-task-select" data-session-lib="' + sess.id + '">';
@@ -10478,8 +10587,13 @@ html[data-brand="snsclub"] .rm-session-task-due {
         html += '<div class="rm-session-next-student">';
         html += '<p class="rm-session-next-student-kicker">あなたが入力</p>';
         html += '<label class="label">次のセッション（日付・時間）</label>';
-        html += '<p class="rm-session-next-time-hint">時間は15分刻み（30分も選択可）です。</p>';
-        html += '<input type="datetime-local" class="input" data-rm-session-next-at="' + escapeHtml(sess.id) + '" data-rm-next-autosave="' + escapeHtml(sess.id) + '" step="900" value="' + escapeHtml(nextLocal) + '" />';
+        html += '<p class="rm-session-next-time-hint">時間は下の一覧から15分刻みのみ選べます。</p>';
+        html += '<input type="hidden" data-rm-session-next-at="' + escapeHtml(sess.id) + '" value="' + escapeHtml(hiddenNextVal) + '" />';
+        html += '<div class="rm-session-next-datetime-row">';
+        html += '<input type="date" class="input rm-session-next-date" data-rm-next-date="' + escapeHtml(sess.id) + '" data-rm-next-autosave="' + escapeHtml(sess.id) + '" value="' + escapeHtml(nextDate) + '" />';
+        html += '<select class="input rm-session-next-time-select" data-rm-next-time="' + escapeHtml(sess.id) + '" data-rm-next-autosave="' + escapeHtml(sess.id) + '">';
+        html += nextSessionQuarterHourOptionsHtml(nextTimeSnapped);
+        html += '</select></div>';
         html += '<label class="label" style="margin-top:10px;">次のセッションまでの目標（自分）</label>';
         html += '<textarea class="input rm-session-goal-ta" data-rm-next-autosave="' + escapeHtml(sess.id) + '" rows="3" data-rm-session-goal-stu="' + escapeHtml(sess.id) + '" placeholder="自分の目標・やること">' + escapeHtml(sess.goalUntilNextStudent || '') + '</textarea>';
         html += '<div class="rm-session-next-footer">';
@@ -10743,6 +10857,14 @@ html[data-brand="snsclub"] .rm-session-task-due {
       });
     }
 
+    container.querySelectorAll('[data-rm-check-all-tasks]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var sid = btn.getAttribute('data-rm-check-all-tasks');
+        if (!sid) return;
+        markAllSessionTasksDone(sid);
+      });
+    });
+
     container.querySelectorAll('[data-rm-sess-tab]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var sid = btn.getAttribute('data-rm-sess-tab');
@@ -10773,6 +10895,14 @@ html[data-brand="snsclub"] .rm-session-task-due {
       });
     });
 
+    function syncNextSessionHiddenFromUi(c, sid) {
+      var h = c.querySelector('[data-rm-session-next-at="' + sid + '"]');
+      var dEl = c.querySelector('[data-rm-next-date="' + sid + '"]');
+      var tEl = c.querySelector('[data-rm-next-time="' + sid + '"]');
+      if (!h || !dEl || !tEl) return;
+      h.value = composeNextSessionAtFromParts(dEl.value, tEl.value);
+    }
+
     function revealNextGoalsManualSaveUi(c, sid) {
       var sendBtn = c.querySelector('[data-rm-session-next-save="' + sid + '"]');
       var savedLbl = c.querySelector('[data-rm-next-saved-note="' + sid + '"]');
@@ -10783,6 +10913,7 @@ html[data-brand="snsclub"] .rm-session-task-due {
     function flushNextGoalsSaveFromContainer(c, sid, skipRoadmap, opts) {
       opts = opts || {};
       var manualSave = !!opts.manualSave;
+      syncNextSessionHiddenFromUi(c, sid);
       var nextEl = c.querySelector('[data-rm-session-next-at="' + sid + '"]');
       var gStuEl = c.querySelector('[data-rm-session-goal-stu="' + sid + '"]');
       var gMgEl = c.querySelector('[data-rm-session-goal-mg="' + sid + '"]');
@@ -10819,14 +10950,13 @@ html[data-brand="snsclub"] .rm-session-task-due {
     container.querySelectorAll('[data-rm-next-autosave]').forEach(function (el) {
       var sid = el.getAttribute('data-rm-next-autosave');
       if (!sid) return;
-      el.addEventListener('input', function () {
+      function onNextGoalsFieldChange() {
+        syncNextSessionHiddenFromUi(container, sid);
         revealNextGoalsManualSaveUi(container, sid);
         scheduleNextGoalsDebounced(container, sid);
-      });
-      el.addEventListener('change', function () {
-        revealNextGoalsManualSaveUi(container, sid);
-        scheduleNextGoalsDebounced(container, sid);
-      });
+      }
+      el.addEventListener('input', onNextGoalsFieldChange);
+      el.addEventListener('change', onNextGoalsFieldChange);
     });
 
     container.querySelectorAll('[data-rm-session-next-save]').forEach(function (btn) {
@@ -11259,33 +11389,6 @@ html[data-brand="snsclub"] .rm-session-task-due {
     var isStudent = u.role === 'student';
 
     var html = '<button type="button" class="chat-back" id="profileBack">← マイページに戻る</button>';
-    if (isStudent) {
-      html += '<div class="card"><p class="card-title">アカウント・担当情報</p>';
-      var l = u.links || {};
-      var mgr = l.managerId ? getUserById(l.managerId) : null;
-      var co = l.coachId ? getUserById(l.coachId) : null;
-      var ld = l.leaderId ? getUserById(l.leaderId) : null;
-      var teamName = '';
-      if (l.teamId && Array.isArray(db.teams)) {
-        var tm = db.teams.find(function (t) {
-          return t.id === l.teamId;
-        });
-        if (tm) teamName = tm.name;
-      }
-      html +=
-        '<p style="margin:0 0 6px;font-size:0.88rem;">担当マネージャー（MG）: <strong>' +
-        escapeHtml(mgr ? mgr.name : '未設定') +
-        '</strong></p>';
-      html += '<p style="margin:0 0 6px;font-size:0.88rem;">コーチ: <strong>' + escapeHtml(co ? co.name : '未設定') + '</strong></p>';
-      html += '<p style="margin:0 0 6px;font-size:0.88rem;">リーダー: <strong>' + escapeHtml(ld ? ld.name : '未設定') + '</strong></p>';
-      html +=
-        '<p style="margin:0 0 6px;font-size:0.88rem;">所属チーム: <strong>' +
-        escapeHtml(teamName || '未設定') +
-        '</strong></p>';
-      html +=
-        '<p style="margin:8px 0 0;font-size:0.78rem;color:var(--muted);line-height:1.45;">変更は管理者が行います。MGから送られた招待リンクを、ログインした状態で開くと担当MGが自動で入ることがあります。</p>';
-      html += '</div>';
-    }
     html += '<div class="card"><p class="card-title">プロフィール編集</p>';
     html += '<label class="label">表示名</label><input type="text" id="editName" class="input" value="' + escapeHtml(u.name) + '" maxlength="40" />';
     if (isStudent) {
